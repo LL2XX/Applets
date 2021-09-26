@@ -6,13 +6,23 @@
 		<style>
 			td {
 				text-align: center;
-				width: 40px;
+				width: 80px;
+				height: 80px;
 			}
 			button {
-				width: 40px;
-				height: 35px;
+				font-size: 40px;
+				width: 80px;
+				height: 80px;
 				background-color: white;
 				border: ;
+			}
+			#result {
+				outline-style: double;
+				font-size: 40px;
+			}
+			.elem {
+				width: 80px;
+				height: 80px;
 			}
 		</style>
 		<script>
@@ -156,27 +166,27 @@
 	<body>
 		<h1 align="center">简易计算器</h1>
 		<br/>
-		<table align="center" border="1">
-			<tr height="55px"><td colspan="4" id="result"></td></tr>
-			<tr width="160px"  height="40px" class="elem">
+		<table border="1" align="center">
+			<tr height="100px"><td colspan="4" id="result"></td></tr>
+			<tr class="elem">
 				<td><button onclick="n7()">7</button></td>
 				<td><button onclick="n8()">8</button></td>
 				<td><button onclick="n9()">9</button></td>
 				<td><button onclick="o1()">+</button></td>
 			</tr>
-			<tr width="160px" height="40px" class="elem">
+			<tr class="elem">
 				<td><button onclick="n4()">4</button></td>
 				<td><button onclick="n5()">5</button></td>
 				<td><button onclick="n6()">6</button></td>
 				<td><button onclick="o2()">-</button></td>
 			</tr>
-			<tr width="160px" height="40px" class="elem">
+			<tr class="elem">
 				<td><button onclick="n1()">1</button></td>
 				<td><button onclick="n2()">2</button></td>
 				<td><button onclick="n3()">3</button></td>
 				<td><button onclick="o3()">x</button></td>
 			</tr>
-			<tr width="160px" height="40px" class="elem">
+			<tr class="elem">
 				<td><button onclick="nx()">.</button></td>
 				<td><button onclick="n0()">0</button></td>
 				<td><button onclick="o5()">=</button></td>
@@ -185,4 +195,3 @@
 		</table>
 	</body>
 </html>
-
