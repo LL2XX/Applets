@@ -16,75 +16,120 @@
 			}
 		</style>
 		<script>
-			var temp=0,ope=1,result=0,co=1;
+			var temp=0,ope=1,result=0,co=10,str='',flag=0;
 			function o1() {
 				caculate();
-				ope=1;co=1;
-				document.getElementById("result").innerHTML=result;
+				ope=1; flag=0; co=10;
+				document.getElementById("result").innerHTML=result+'+';
+				str=result+'+';
 			}
 			function o2() {
 				caculate();
-				ope=2;co=1;
-				document.getElementById("result").innerHTML=result;
+				ope=2; flag=0; co=10;
+				document.getElementById("result").innerHTML=result+'-';
+				str=result+'-';
 			}
 			function o3() {
 				caculate();
-				ope=3;co=1;
-				document.getElementById("result").innerHTML=result;
+				ope=3; flag=0; co=10;
+				document.getElementById("result").innerHTML=result+'×';
+				str=result+'×';
 			}
 			function o4() {
 				caculate();
-				ope=4;co=1;
-				document.getElementById("result").innerHTML=result;
+				ope=4; flag=0; co=10;
+				document.getElementById("result").innerHTML=result+'÷';
+				str=result+'÷';
 			}
 			function o5() {
 				caculate();
 				document.getElementById("result").innerHTML=result;
-				temp=0;ope=1;result=0;co=1;
+				temp=0;ope=1;result=0;str='';flag=0;co=10;
 			}
 			function n0() {
-				temp=temp*co+0; co*=10;
-				document.getElementById("result").innerHTML=temp;
+				if(flag) {
+					temp+=co*0;
+					co/=10;
+				}
+				else temp=temp*co+0;
+				document.getElementById("result").innerHTML=str+temp;
 			}
 			function n1() {
-				temp=temp*co+1; co*=10;
-				document.getElementById("result").innerHTML=temp;
+				if(flag) {
+					temp+=co*1;
+					co/=10;
+				}
+				else temp=temp*co+1;
+				document.getElementById("result").innerHTML=str+temp;
 			}
 			function n2() {
-				temp=temp*co+2; co*=10;
-				document.getElementById("result").innerHTML=temp;
+				if(flag) {
+					temp+=co*2;
+					co/=10;
+				}
+				else temp=temp*co+2;
+				document.getElementById("result").innerHTML=str+temp;
 			}
 			function n3() {
-				temp=temp*co+3; co*=10;
-				document.getElementById("result").innerHTML=temp;
+				if(flag) {
+					temp+=co*3;
+					co/=10;
+				}
+				else temp=temp*co+3;
+				document.getElementById("result").innerHTML=str+temp;
 			}
 			function n4() {
-				temp=temp*co+4; co*=10;
-				document.getElementById("result").innerHTML=temp;
+				if(flag) {
+					temp+=co*4;
+					co/=10;
+				}
+				else temp=temp*co+4;
+				document.getElementById("result").innerHTML=str+temp;
 			}
 			function n5() {
-				temp=temp*co+5; co*=10;
-				document.getElementById("result").innerHTML=temp;
+				if(flag) {
+					temp+=co*5;
+					co/=10;
+				}
+				else temp=temp*co+5;
+				document.getElementById("result").innerHTML=str+temp;
 			}
 			function n6() {
-				temp=temp*co+6; co*=10;
-				document.getElementById("result").innerHTML=temp;
+				if(flag) {
+					temp+=co*6;
+					co/=10;
+				}
+				else temp=temp*co+6;
+				document.getElementById("result").innerHTML=str+temp;
 			}
 			function n7() {
-				temp=temp*co+7; co*=10;
-				document.getElementById("result").innerHTML=temp;
+				if(flag) {
+					temp+=co*7;
+					co/=10;
+				}
+				else temp=temp*co+7;
+				document.getElementById("result").innerHTML=str+temp;
 			}
 			
 			function n8() {
-				temp=temp*co+8; co*=10;
-				document.getElementById("result").innerHTML=temp;
+				if(flag) {
+					temp+=co*8;
+					co/=10;
+				}
+				else temp=temp*co+8;
+				document.getElementById("result").innerHTML=str+temp;
 			}
 			function n9() {
-				temp=temp*co+9; co*=10;
-				document.getElementById("result").innerHTML=temp;
+				if(flag) {
+					temp+=co*9;
+					co/=10;
+				}
+				else temp=temp*co+9;
+				document.getElementById("result").innerHTML=str+temp;
 			}
 			function nx() {
-				alert("别点了，没开发出来浮点数运算");
+				flag=1; co=0.1;
+				document.getElementById("result").innerHTML+='.';
 			}
 			function caculate() {
 				switch(ope) {
@@ -140,3 +185,4 @@
 		</table>
 	</body>
 </html>
+
