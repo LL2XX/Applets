@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			td {
+				text-align: center;
+				width: 80px;
+				height: 80px;
+			}
+			button {
+				font-size: 40px;
+				width: 80px;
+				height: 80px;
+				background-color: white;
+				border: ;
+			}
+			#result {
+				outline-style: double;
+				font-size: 40px;
+			}
+			.elem {
+				width: 80px;
+				height: 80px;
+			}
+		</style>
+		<script>
+			var temp=0,ope=1,result=0,co=10,str='',flag=0;
+			
+			function operator(x) {
+				caculate();
+				switch(x) {
+					case '+': ope=1; break;
+					case '-': ope=2; break;
+					case '×': ope=3; break;
+					case '÷': ope=4; break;
+				}
+				flag=0; co=10;
+				document.getElementById("result").innerHTML=result+x;
+				str=result+x;
+			}
+
+			function o5() {
+				caculate();
+				document.getElementById("result").innerHTML=result;
+				temp=0;ope=1;result=0;str='';flag=0;co=10;
+			}
+
+			function opnum(n) {
+				if(flag) {
+					temp+=co*n;
+					co/=10;
+				}
+				else temp=temp*co+n;
+				document.getElementById("result").innerHTML=str+temp;
+			}
+			
+			function nx() {
+				flag=1; co=0.1;
+				document.getElementById("result").innerHTML+='.';
+			}
+			
+			function caculate() {
+				switch(ope) {
+					case 1:
+					result+=temp; temp=0;
+					break;
+					case 2:
+					result-=temp; temp=0;
+					break;
+					case 3:
+					result*=temp; temp=0;
+					break;
+					case 4:
+					result/=temp; temp=0;
+					break;
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h1 align="center">简易计算器</h1>
+		<p align="center">PS：连续点击运算符会有错误，“=”可以当归零用</p>
+		<br/>
+		<table border="1" align="center">
+			<tr height="100px"><td colspan="4" id="result"></td></tr>
+			<tr class="elem">
+				<td><button onclick="opnum(7)">7</button></td>
+				<td><button onclick="opnum(8)">8</button></td>
+				<td><button onclick="opnum(9)">9</button></td>
+				<td><button onclick="operator('+')">+</button></td>
+			</tr>
+			<tr class="elem">
+				<td><button onclick="opnum(4)">4</button></td>
+				<td><button onclick="opnum(5)">5</button></td>
+				<td><button onclick="opnum(6)">6</button></td>
+				<td><button onclick="operator('-')">-</button></td>
+			</tr>
+			<tr class="elem">
+				<td><button onclick="opnum(1)">1</button></td>
+				<td><button onclick="opnum(2)">2</button></td>
+				<td><button onclick="opnum(3)">3</button></td>
+				<td><button onclick="operator('×')">×</button></td>
+			</tr>
+			<tr class="elem">
+				<td><button onclick="nx()">.</button></td>
+				<td><button onclick="opnum(0)">0</button></td>
+				<td><button onclick="o5()">=</button></td>
+				<td><button onclick="operator('÷')">÷</button></td>
+			</tr>
+		</table>
+	</body>
+</html>
